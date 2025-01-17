@@ -15,7 +15,9 @@ function App() {
 				heading="Countries"
 				onSelectItem={handleSelectItem}
 			/>
-			<Alert>Test alerta</Alert>
+			<Alert>
+				<span>Test alerta</span>
+			</Alert>
 		</div>
 	);
 }
