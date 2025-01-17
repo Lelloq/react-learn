@@ -6,6 +6,7 @@ import Button from "./components/Button";
 function App() {
 	const items = ["China", "Japan", "South Korea", "Brazil", "Argentina"];
 	const [text, changeText] = useState("A Button");
+	const [alertVisible, setAlertVisibility] = useState(false);
 
 	const defaultState = "A button";
 	const clicked = "Clicked";
@@ -16,6 +17,7 @@ function App() {
 
 	const handleClick = () => {
 		changeText(clicked);
+		setAlertVisibility(true);
 		setTimeout(() => {
 			changeText(defaultState);
 		}, 1000);
@@ -28,9 +30,15 @@ function App() {
 				heading="Countries"
 				onSelectItem={handleSelectItem}
 			/>
-			<Alert>
-				<span>Test alerta</span>
-			</Alert>
+			{alertVisible && (
+				<Alert
+					onClose={() => {
+						setAlertVisibility(false);
+					}}
+				>
+					Test alerta
+				</Alert>
+			)}
 			<Button text={text} onClick={handleClick} />
 		</div>
 	);
