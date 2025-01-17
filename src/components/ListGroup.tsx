@@ -1,12 +1,12 @@
+import { MouseEvent } from "react";
+
 function ListGroup() {
 	const items = ["China", "Japan", "South Korea", "Brazil", "Argentina"];
 
-	const listItems = items.map((item) => (
-		<li
-			className="list-group-item"
-			key={item}
-			onClick={() => console.log(item)}
-		>
+	const handleClick = (e: MouseEvent) => console.log(e);
+
+	const listItems = items.map((item, index) => (
+		<li className="list-group-item" key={index} onClick={handleClick}>
 			{item}
 		</li>
 	));
