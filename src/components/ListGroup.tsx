@@ -1,7 +1,12 @@
 import { useState } from "react";
 
-function ListGroup() {
-	const items = ["China", "Japan", "South Korea", "Brazil", "Argentina"];
+interface ListProps {
+	items: string[];
+	heading: string;
+}
+
+function ListGroup(props: ListProps) {
+	const { items, heading } = props;
 	const [selected, setSelectedIndex] = useState(-1);
 
 	const listItems = items.map((item, index) => (
@@ -26,7 +31,7 @@ function ListGroup() {
 
 	return (
 		<>
-			<h1>wow yes</h1>
+			<h1>{heading}</h1>
 			{getMessage(items)}
 			<ul className="list-group">{listItems}</ul>
 		</>
