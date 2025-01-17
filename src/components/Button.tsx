@@ -1,20 +1,11 @@
-import { useState } from "react";
+interface ButtonProps {
+	text: string;
+	onClick: () => void;
+}
 
-const Button = () => {
-	const [text, changeText] = useState("A Button");
-	const defaultState = "A button";
-	const clicked = "Clicked";
-
+const Button = ({ text, onClick }: ButtonProps) => {
 	return (
-		<button
-			className="btn btn-primary"
-			onClick={() => {
-				changeText(clicked);
-				setTimeout(() => {
-					changeText(defaultState);
-				}, 1000);
-			}}
-		>
+		<button className="btn btn-primary" onClick={onClick}>
 			{text}
 		</button>
 	);
