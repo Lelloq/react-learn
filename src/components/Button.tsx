@@ -6,7 +6,7 @@ const Button = () => {
 	const clicked = "Clicked";
 
 	return (
-		<div
+		<button
 			className="btn btn-primary"
 			onClick={() => {
 				changeText(clicked);
@@ -16,7 +16,7 @@ const Button = () => {
 			}}
 		>
 			{text}
-		</div>
+		</button>
 	);
 };
 
