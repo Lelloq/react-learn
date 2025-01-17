@@ -1,5 +1,6 @@
 import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
+import Button from "./components/Button";
 
 function App() {
 	const items = ["China", "Japan", "South Korea", "Brazil", "Argentina"];
@@ -18,6 +19,7 @@ function App() {
 			<Alert>
 				<span>Test alerta</span>
 			</Alert>
+			<Button />
 		</div>
 	);
 }
