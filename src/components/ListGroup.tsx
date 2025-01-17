@@ -1,14 +1,25 @@
 function ListGroup() {
+	const items = ["China", "Japan", "South Korea", "Brazil", "Argentina"];
+
+	const listItems = items.map((item) => (
+		<li
+			className="list-group-item"
+			key={item}
+			onClick={() => console.log(item)}
+		>
+			{item}
+		</li>
+	));
+
+	const getMessage = (itemList: string[]) => {
+		return itemList.length === 0 && <p>no items</p>;
+	};
+
 	return (
 		<>
 			<h1>wow yes</h1>
-			<ul className="list-group">
-				<li className="list-group-item">An item</li>
-				<li className="list-group-item">A second item</li>
-				<li className="list-group-item">A third item</li>
-				<li className="list-group-item">A fourth item</li>
-				<li className="list-group-item">And a fifth one</li>
-			</ul>
+			{getMessage(items)}
+			<ul className="list-group">{listItems}</ul>
 		</>
 	);
 }
